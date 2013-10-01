@@ -14,21 +14,22 @@ import java.util.Scanner;
 public class Salary {
 	
 	public static void main(String[] args) {
-		int hoursWorked,
+		double hoursWorked,
 			wage,
+            rate=10,
 			overTime;
 		
 	Scanner input = new Scanner (System.in);
 	System.out.print("Enter number of hours worked: ");
 	hoursWorked = input.nextInt();
 	if (hoursWorked <= 40){
-		wage = hoursWorked*10;
-		System.out.printf("Your salary is: %d",wage);}
+		wage = hoursWorked*rate;
+		System.out.printf("Your salary is: $%.2f",wage);}
 	
 	else{
 		overTime = hoursWorked-40;
-		wage = (overTime*15)+(40*10);
-		System.out.printf("Your salary is: %d", wage);
+		wage = (overTime*(rate*1.5))+(40*rate);
+		System.out.printf("Your salary is: $%.2f", wage);
 	}
 	}
 
